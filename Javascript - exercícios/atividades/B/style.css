@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+}
+
+#situacao {
+    font-weight: bold;
+}
+
+.normal {
+    color: green;
+}
+
+.alerta {
+    color: orange;
+}
+
+.perigo {
+    color: red;
+}

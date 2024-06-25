@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+    <style>
+        #situacao {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    <p>Média: <span id="media"></span></p>
+    <p>Situação: <span id="situacao"></span></p>
+
+    <script>
+        // Obter as notas usando prompt()
+        let nota1 = parseFloat(prompt("Digite a primeira nota:"));
+        let nota2 = parseFloat(prompt("Digite a segunda nota:"));
+
+        // Calcular a média
+        let media = (nota1 + nota2) / 2;
+
+        // Determinar a situação e cor
+        let situacao = "";
+        let cor = "";
+
+        if (media >= 6) {
+            situacao = "Aprovado";
+            cor = "blue";
+        } else {
+            situacao = "Reprovado";
+            cor = "red";
+        }
+
+        // Mostrar a média e situação
+        document.getElementById("media").innerHTML = media.toFixed(2);
+        document.getElementById("situacao").innerHTML = situacao;
+        document.getElementById("situacao").style.color = cor;
+    </script>
+    <button><a href="/PW/Javascript - exercícios/index.html">Voltar a pagina Inicial</a></button>
+</body>
+</html>

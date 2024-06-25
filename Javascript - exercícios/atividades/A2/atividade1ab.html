@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média 2</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #situacao {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Média 2</h1>
+    <label for="nota1">Nota 1:</label>
+    <input type="number" id="nota1" step="0.01"><br><br>
+    <label for="nota2">Nota 2:</label>
+    <input type="number" id="nota2" step="0.01"><br><br>
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <p>Média: <span id="media"></span></p>
+    <p>Situação: <span id="situacao"></span></p>
+
+    <script>
+        function calcularMedia() {
+            // Obter as notas dos campos de input
+            let nota1 = parseFloat(document.getElementById("nota1").value);
+            let nota2 = parseFloat(document.getElementById("nota2").value);
+
+            // Calcular a média
+            let media = (nota1 + nota2) / 2;
+
+            // Determinar a situação e cor
+            let situacao = "";
+            let cor = "";
+
+            if (media >= 6) {
+                situacao = "Aprovado";
+                cor = "blue";
+            } else {
+                situacao = "Reprovado";
+                cor = "red";
+            }
+
+            // Mostrar a média e situação
+            document.getElementById("media").innerHTML = media.toFixed(2);
+            document.getElementById("situacao").innerHTML = situacao;
+            document.getElementById("situacao").style.color = cor;
+        }
+    </script>
+
+<button><a href="/PW/Javascript - exercícios/index.html">Voltar a pagina Inicial</a></button>
+</body>
+</html>
